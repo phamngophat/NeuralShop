@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Lab 1 – Login UI | Your Name",
-  description: "A responsive split-layout login page built with Next.js, Tailwind CSS, and ShadCN UI.",
+  title: "NeuralShop - Premium AI & Tool Accounts",
+  description: "Unlock the power of AI with premium accounts like ChatGPT, Gemini, and more.",
 };
 
 export default function RootLayout({
@@ -25,7 +27,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-slate-50`}>
+        <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
