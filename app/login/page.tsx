@@ -55,6 +55,10 @@ export default function LoginPage() {
           localStorage.setItem("isLoggedIn", "true"); // Set auth flag
           // Optional: Store current user info
           localStorage.setItem("currentUser", JSON.stringify(user));
+
+          // Notify Navbar to update (Show Search & User Info immediately)
+          window.dispatchEvent(new Event("authUpdated"));
+
           alert(`Welcome back, ${user.fullname}! Redirection to home...`);
           router.push("/");
         } else {
